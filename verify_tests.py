@@ -19,7 +19,7 @@ def is_arr_sorted(arr: list[int]) -> bool:
 def verify_option(option: int, counter: int):
     time = 0
     start_time = datetime.now()
-    ans = check_output(f"./problem < ./out/option{option}.txt", shell=True)
+    ans = check_output(f"./problem_merge < ./out/option{option}.txt", shell=True)
     time = datetime.now() - start_time
     arr = ans.decode("ascii").split("\n")
 
@@ -33,7 +33,7 @@ def verify_option(option: int, counter: int):
 
 
 def start():
-    check_output(f"c++ problem.cpp -o D", shell=True)
+    check_output(f"c++ problem_merge.cpp -o problem_merge", shell=True)
     counter = 1
 
     for i in range(1, 17):
